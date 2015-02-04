@@ -183,3 +183,15 @@ minetest.register_node("volcano:errupted_lava_flowing", {
 			  post_effect_color = {a=192, r=255, g=64, b=0},
 			  groups = {lava=3, liquid=2, hot=3, igniter=1, not_in_creative_inventory=1},
 })
+
+minetest.register_node("volcano:rubble", {
+			  description = "Volcanic rubble",
+			  tiles = {"default_gravel.png"},
+			  drop="",
+			  is_ground_content = true,
+			  groups = {crumbly=2, falling_node=1},
+			  sounds = default.node_sound_dirt_defaults({
+				footstep = {name="default_gravel_footstep", gain=0.5},
+				dug = {name="default_gravel_footstep", gain=1.0},
+			  }),
+})
