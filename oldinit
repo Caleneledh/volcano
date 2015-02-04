@@ -1,0 +1,15 @@
+minetest.register_abm({
+      nodenames = {"default:lava_source"},
+      interval = 5,
+      chance = 5,
+      action = function(pos)
+	 pos.y = pos.y + 1
+	 local node_above = minetest.get_node(pos)
+	 if pos.y > 25 then return end
+	 if node_above.name == "air" or node_above.name == "default:desert_stone" or node_above.name == "default:desert_sand" or node_above.name == "default:stone" or node_above.name == "default:dirt" or node_above.name == "default:dirt_with_grass"  or node_above.name == "default:sand" then
+	    minetest.add_node(pos,{name="default:lava_source"})
+	 end
+      end,
+})
+
+	 
