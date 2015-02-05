@@ -40,8 +40,8 @@ end
 minetest.register_abm({
       nodenames = {"volcano:errupted_lava_flowing"},
       neighbors = {"air"},
-      interval = 5,
-      chance = 5,
+      interval = 4,
+      chance = 6,
       action = function(pos, node, active_object_count, active_object_count_wider)
 	 --cool_errupted_lava_flowing(pos, node, active_object_count, active_object_count_wider)
 	 minetest.add_node(pos,{name="volcano:rubble"})
@@ -58,16 +58,23 @@ minetest.register_abm({
       end,
 })
 
-
+---[[
 minetest.register_abm({
       nodenames = {"default:lava_source"},
       interval = 3,
       chance = 2,
       action = function(pos)
-	 if pos.y < -50 then return end
-	 minetest.add_node(pos,{name="volcano:magma_source"})
+	 --print("called lava abm")
+	 if pos.y < -50 then
+	    --print("not placing")
+	 else 
+	    --print ("placing magma")
+	    minetest.add_node(pos,{name="volcano:magma_source"})
+	 end
       end,
 })
+--]]
+ 
 
 minetest.register_abm({
       nodenames = {"volcano:magma_source"},

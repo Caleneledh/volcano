@@ -1,3 +1,15 @@
 WIP
 
 A mod that adds errupting volcanos to minetest
+
+
+Erruptions start with a default lava source above -50.  Magma (volcano:magma_source) will
+grow on top of the lava source until it reaches -1, at which point it will changed to errupted
+lava (volcano:errupted_lava_source).  This will continue to grow up to 50.
+
+Currently, as the lava cools it changes to default:gravel.  I chose this as the nodes need to fall to
+create the proper volcano(ish) shape.  I'll probably change it to a mods specific node.
+
+
+Depends:
+default
